@@ -144,7 +144,7 @@ const Registration = () => {
 
     e.preventDefault();
 
-    axios.post('http://localhost:4000/api/registration', formData)
+    axios.post('https://fuct-backend.vercel.app/api/registration', formData)
       .then(response => {
         console.log('Form submitted successfully:', response.data);
       })

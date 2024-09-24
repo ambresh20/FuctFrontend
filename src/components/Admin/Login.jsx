@@ -22,7 +22,7 @@ const Login = () => {
   };
 
   const loginWithGoogle = () => {
-    window.open("http://localhost:4000/api/google/callback", "_self");
+    window.open("https://fuct-backend.vercel.app/api/google/callback", "_self");
   };
 
   const handlesubmit = (e) => {

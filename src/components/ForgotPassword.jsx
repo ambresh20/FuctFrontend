@@ -37,7 +37,7 @@ const ForgotPassword = () => {
 	
 		// SEND DATA using POST
 		axios
-		  .post("http://localhost:4000/api/forgot-password", data)
+		  .post("https://fuct-backend.vercel.app/api/forgot-password", data)
 		  .then((response) => {
 			console.log("Login successfully:", response.data);
 		  })
