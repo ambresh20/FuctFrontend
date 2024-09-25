@@ -21,7 +21,7 @@ const Login = () => {
   };
 
   const loginWithGoogle = () => {
-    window.open("https://fuct-backend.vercel.app/api/google/callback", "_self");
+    window.open("https://backend-fuct.vercel.app/google/callback", "_self");
   };
 
   const handlesubmit = (e) => {
@@ -63,7 +63,7 @@ const Login = () => {
 
     // SEND DATA using POST
     axios
-      .post("http://localhost:4000/api/login", userdata)
+      .post("https://backend-fuct.vercel.app/login", userdata)
       .then((response) => {
         console.log("Login successfully:", response.data);
       })

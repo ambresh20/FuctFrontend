@@ -143,8 +143,8 @@ const Registration = () => {
     //It is optional Validation --> because we are before validate when user are filling the value --> function validateInput() methods
 
     e.preventDefault();
-
-    axios.post('https://fuct-backend.vercel.app/api/registration', formData)
+    // backend-fuct.vercel.app/registration 
+    axios.post('https://backend-fuct.vercel.app/registration', formData)
       .then(response => {
         console.log('Form submitted successfully:', response.data);
       })

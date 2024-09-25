@@ -52,7 +52,7 @@ const ResetPassword = () => {
     if (Object.keys(showErrorMsg).length === 0) {
       // SEND DATA using POST, including the token in the URL
       axios
-        .post(`https://fuct-backend.vercel.app/api/reset-password/${token}`, data)
+        .post(`https://backend-fuct.vercel.app/reset-password/${token}`, data)
         .then((response) => {
           console.log("Password reset successfully:", response.data);
         })
