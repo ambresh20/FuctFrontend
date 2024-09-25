@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import login from "../Assets/login.jpg";
 import { AiOutlineEye } from "react-icons/ai";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
@@ -8,6 +8,7 @@ import axios from "axios";
 const Login = () => {
   const [error, setError] = useState({});
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
 
   const [userdata, setUserData] = useState({
     email: "",
@@ -21,7 +22,7 @@ const Login = () => {
   };
 
   const loginWithGoogle = () => {
-    window.open("https://backend-fuct.vercel.app/google/callback", "_self");
+    window.open("https://backend-25ro.onrender.com/google/callback", "_self");
   };
 
   const handlesubmit = (e) => {
@@ -63,9 +64,12 @@ const Login = () => {
 
     // SEND DATA using POST
     axios
-      .post("https://backend-fuct.vercel.app/login", userdata)
+      .post("https://backend-25ro.onrender.com/login", userdata)
       .then((response) => {
         console.log("Login successfully:", response.data);
+
+        // Redirect to dashboard on successful login
+        navigate("/user-dashboard"); 
       })
       .catch((error) => {
         console.error("Error submitting form:", error);

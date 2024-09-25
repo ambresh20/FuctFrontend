@@ -22,7 +22,7 @@ const Login = () => {
   };
 
   const loginWithGoogle = () => {
-    window.open("https://backend-fuct.vercel.app/google/callback", "_self");
+    window.open("https://backend-25ro.onrender.com/google/callback", "_self");
   };
 
   const handlesubmit = (e) => {
@@ -64,7 +64,7 @@ const Login = () => {
 
     // SEND DATA using POST
     axios
-      .post("http://localhost:4000/api/admin-login", admindata)
+      .post("https://backend-25ro.onrender.com/admin-login", admindata)
       .then((response) => {
         console.log("Admin Login successfully:", response.data);
 

@@ -21,7 +21,7 @@ const ContactUsPage = () => {
     setIsSubmitted(true);
     // console.log(userData);
 
-    axios.post('https://backend-fuct.vercel.app/contact-store', userData)
+    axios.post('https://backend-25ro.onrender.com/contact-store', userData)
     .then(response => {
       console.log('Contact Form submitted successfully:', response.data);
     })

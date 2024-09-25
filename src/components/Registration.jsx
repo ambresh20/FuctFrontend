@@ -144,7 +144,7 @@ const Registration = () => {
 
     e.preventDefault();
     // backend-fuct.vercel.app/registration 
-    axios.post('https://backend-fuct.vercel.app/registration', formData)
+    axios.post('https://backend-25ro.onrender.com/registration', formData)
       .then(response => {
         console.log('Form submitted successfully:', response.data);
       })

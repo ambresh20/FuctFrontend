@@ -17,10 +17,11 @@ import ForgotPassword from "./components/ForgotPassword";
 import ResetPassword from "./components/ResetPassword";
 import AdminLogin from "./components/Admin/Login" ;
 import AdminDashboard from "./components/Admin/AdminDashboard";
+import UserDashboard from "./components/UserDashboard";
 
 
 function App() {
-  const location = useLocation();  // Get current route
+  const location = useLocation();  
 
   return (
     <div>
@@ -48,6 +49,7 @@ function App() {
         <Route path="/api/user/reset-password/:token" element={<ResetPassword />} />
         <Route path="/admin-login" element={<AdminLogin />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        <Route path="/user-dashboard" element={<UserDashboard />} />
       </Routes>
 
       <Footer />

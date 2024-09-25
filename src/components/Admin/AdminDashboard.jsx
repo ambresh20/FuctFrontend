@@ -7,7 +7,7 @@ const AdminDashboard = () => {
   // Fetch data when the component is loaded
   useEffect(() => {
     axios
-      .get('https://backend-fuct.vercel.app/all-user')
+      .get('https://backend-25ro.onrender.com/all-user')
       .then((response) => {
         setUsers(response.data.data); //'data' array in the response
       })
