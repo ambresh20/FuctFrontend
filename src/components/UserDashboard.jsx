@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 const UserDashboard = () => {
   const [formData, setFormData] = useState({
@@ -45,6 +46,7 @@ const UserDashboard = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const validationErrors = validate();
     setErrors(validationErrors);
 
@@ -53,18 +55,28 @@ const UserDashboard = () => {
     }
 
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    console.log(formData);
-    setIsSubmitting(false);
 
-    alert(
-      "Profile Updated: Your profile information has been successfully updated."
-    );
+    axios
+    .post('https://backend-25ro.onrender.com/user-store', formData)
+    .then((response) => {
+      console.log('Response from server:', response.data); 
+    })
+    .catch((error) => {
+      console.error('Error submitting form:', error); 
+    })
+    .finally(() => {
+      setIsSubmitting(false); 
+    });
+
   };
 
   return (
     <div className="my-5 mx-2 md:mx-4">
-      <form onSubmit={handleSubmit} className="space-y-6 max-w-md mx-auto bg-gray-300 p-5 rounded-lg ">
+      <form
+        onSubmit={handleSubmit}
+        className="space-y-6 max-w-md mx-auto bg-gray-300 p-5 rounded-lg"
+      >
+        {/* Form fields remain the same */}
         <div className="space-y-2">
           <label htmlFor="fullName" className="block font-medium">
             Full Name
