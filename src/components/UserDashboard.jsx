@@ -3,10 +3,10 @@ import axios from "axios";
 
 const UserDashboard = () => {
   const [formData, setFormData] = useState({
-    fullName: "",
-    dateOfBirth: "",
+    name: "",
+    dob: "",
     occupation: "",
-    interests: "",
+    interest: "",
     bio: "",
   });
 
@@ -16,20 +16,20 @@ const UserDashboard = () => {
   const validate = () => {
     const newErrors = {};
 
-    if (!formData.fullName || formData.fullName.length < 2) {
-      newErrors.fullName = "Full name must be at least 2 characters";
+    if (!formData.name || formData.name.length < 2) {
+      newErrors.name = "Full name must be at least 2 characters";
     }
 
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(formData.dateOfBirth)) {
-      newErrors.dateOfBirth = "Please enter a valid date in YYYY-MM-DD format";
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(formData.dob)) {
+      newErrors.dob = "Please enter a valid date in YYYY-MM-DD format";
     }
 
     if (!formData.occupation || formData.occupation.length < 2) {
       newErrors.occupation = "Occupation must be at least 2 characters";
     }
 
-    if (!formData.interests || formData.interests.length < 3) {
-      newErrors.interests = "Please enter at least one interest";
+    if (!formData.interest || formData.interest.length < 3) {
+      newErrors.interest = "Please enter at least one interest";
     }
 
     if (formData.bio.length > 500) {
@@ -56,7 +56,7 @@ const UserDashboard = () => {
 
     setIsSubmitting(true);
 
-    axios
+    await axios
     .post('https://backend-25ro.onrender.com/user-store', formData)
     .then((response) => {
       console.log('Response from server:', response.data); 
@@ -78,36 +78,36 @@ const UserDashboard = () => {
       >
         {/* Form fields remain the same */}
         <div className="space-y-2">
-          <label htmlFor="fullName" className="block font-medium">
+          <label htmlFor="name" className="block font-medium">
             Full Name
           </label>
           <input
-            id="fullName"
-            name="fullName"
+            id="name"
+            name="name"
             type="text"
-            value={formData.fullName}
+            value={formData.name}
             onChange={handleChange}
             className="border border-gray-300 rounded-md p-2 w-full"
           />
-          {errors.fullName && (
-            <p className="text-sm text-red-500">{errors.fullName}</p>
+          {errors.name && (
+            <p className="text-sm text-red-500">{errors.name}</p>
           )}
         </div>
 
         <div className="space-y-2">
-          <label htmlFor="dateOfBirth" className="block font-medium">
+          <label htmlFor="dob" className="block font-medium">
             Date of Birth
           </label>
           <input
-            id="dateOfBirth"
-            name="dateOfBirth"
+            id="dob"
+            name="dob"
             type="date"
-            value={formData.dateOfBirth}
+            value={formData.dob}
             onChange={handleChange}
             className="border border-gray-300 rounded-md p-2 w-full"
           />
-          {errors.dateOfBirth && (
-            <p className="text-sm text-red-500">{errors.dateOfBirth}</p>
+          {errors.dob && (
+            <p className="text-sm text-red-500">{errors.dob}</p>
           )}
         </div>
 
@@ -129,19 +129,19 @@ const UserDashboard = () => {
         </div>
 
         <div className="space-y-2">
-          <label htmlFor="interests" className="block font-medium">
+          <label htmlFor="interest" className="block font-medium">
             Interests (comma-separated)
           </label>
           <input
-            id="interests"
-            name="interests"
+            id="interest"
+            name="interest"
             type="text"
-            value={formData.interests}
+            value={formData.interest}
             onChange={handleChange}
             className="border border-gray-300 rounded-md p-2 w-full"
           />
-          {errors.interests && (
-            <p className="text-sm text-red-500">{errors.interests}</p>
+          {errors.interest && (
+            <p className="text-sm text-red-500">{errors.interest}</p>
           )}
         </div>
 
