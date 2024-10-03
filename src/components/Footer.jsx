@@ -5,6 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white p-10">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 p-4">
+
         {/* Company Info */}
         <div className="flex flex-col space-y-4">
           <h2 className="text-2xl font-bold">Fucturica Technologies</h2>
@@ -114,27 +115,31 @@ const Footer = () => {
           </ul>
         </div>
 
+
         {/* Newsletter Signup */}
         <div className="flex flex-col space-y-4">
           <h2 className="text-xl font-bold">Stay Connected</h2>
           <p>Subscribe to our newsletter for the latest updates.</p>
-          <form className="flex">
+          <form className="flex flex-col sm:flex-row">
             <input
               type="email"
               placeholder="Enter your email"
-              className="p-2 rounded-l bg-gray-800 text-white focus:outline-none"
+              className="p-2 rounded-l sm:rounded-l-none bg-gray-800 text-white focus:outline-none w-full sm:w-auto mb-2 sm:mb-0"
             />
-            <button className="bg-blue-500 hover:bg-blue-600 p-2 rounded-r">
+            <button className="bg-blue-500 hover:bg-blue-600 p-2 rounded-r sm:rounded-l-none w-full sm:w-auto">
               Subscribe
             </button>
           </form>
         </div>
+
       </div>
+
 
       {/* Copyright */}
       <div className="text-center mt-8 text-gray-500">
         <p>&copy; 2024 Fucturica Technologies. All rights reserved.</p>
       </div>
+
     </footer>
   );
 };

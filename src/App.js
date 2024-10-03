@@ -20,11 +20,12 @@ import AdminDashboard from "./components/Admin/AdminDashboard";
 import UserDashboard from "./components/UserDashboard";
 
 
+
 function App() {
   const location = useLocation();  
 
   return (
-    <div>
+    <div >
       <Navbar />
 
       {location.pathname === "/" && (
