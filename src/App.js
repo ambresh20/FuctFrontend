@@ -19,6 +19,14 @@ import AdminLogin from "./components/Admin/Login" ;
 import AdminDashboard from "./components/Admin/AdminDashboard";
 import UserDashboard from "./components/UserDashboard";
 
+// Blog Components
+import BlogList from "./components/Blogs/BlogList";
+import BlogDetails from "./components/Blogs/BlogDetails";
+import EditBlog from "./components/Blogs/EditBlog" ;
+import CreateBlog from "./components/Blogs/CreateBlog";
+import CategoryPage from "./components/Blogs/CategoryPage";
+import TagPage from "./components/Blogs/TagPage";
+
 
 
 function App() {
@@ -51,6 +59,16 @@ function App() {
         <Route path="/admin-login" element={<AdminLogin />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
         <Route path="/user-dashboard" element={<UserDashboard />} />
+
+        {/* Blog Routes */}
+        <Route path="/blogs" element={<BlogList />} />
+        <Route path="/blog/:id" element={<BlogDetails />} />
+        <Route path="/edit-blog/:id" element={<EditBlog />} />
+        <Route path="/create-blog" element={<CreateBlog />} />
+
+        <Route path="/blogs/category/:category" element={<CategoryPage />} />
+        <Route path="/blogs/tag/:tag" element={<TagPage />} />
+
       </Routes>
 
       <Footer />
