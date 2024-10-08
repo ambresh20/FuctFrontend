@@ -59,16 +59,18 @@ export const deleteBlog = async (id) => {
  
 
 
+
 // Fetch blogs by category
 export const fetchBlogsByCategory = async (category) => {
   try {
     const response = await axios.get(`https://backend-25ro.onrender.com/api/categories/${category}`);
-    return response.data;  
+    return response.data;
   } catch (error) {
     console.error("Error fetching blogs by category:", error);
     throw error;
   }
 };
+
 
 // Fetch blogs by tag
 export const fetchBlogsByTag = async (tag) => {
