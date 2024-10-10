@@ -1,12 +1,20 @@
-import React from 'react'
-import VantaBackground from './VantaBackground';
+import React from 'react';
+import Banner from '../Assets/banner.jpg';
 
 const Home = () => {
   return (
-    <section id="home" className="relative text-white h-screen flex items-center justify-center overflow-hidden">
-      <VantaBackground />
-
-      {/* Hero Content */}
+    <section
+      id="home"
+      className="relative text-white h-screen flex items-center justify-center overflow-hidden"
+      style={{
+        backgroundImage: `url(${Banner})`, // Corrected this line
+        height: '100vh',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      {/* Content */}
       <div className="relative z-10 text-center">
         <h1 className="text-4xl md:text-6xl font-bold mb-4">Welcome to Fucturica Technologies</h1>
         <p className="text-lg md:text-2xl mb-10">

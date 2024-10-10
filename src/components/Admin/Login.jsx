@@ -68,8 +68,19 @@ const Login = () => {
       .then((response) => {
         console.log("Admin Login successfully:", response.data);
 
+        console.log(response.userType);
+        window.localStorage.setItem("token", response.data);
+        window.localStorage.setItem("userType", "admin");
+        window.localStorage.setItem("loggedIn", true);
+        
+        if (response.userType === "admin") {
+          return (window.location.href = "./admin-dashboard");
+        } else {
+          window.location.href = "./user-dashboard";
+        }
+
         // Redirect to dashboard on successful login
-        navigate("/admin-dashboard"); 
+        // navigate("/admin-dashboard"); 
       })
       .catch((error) => {
         console.error("Error submitting form:", error);

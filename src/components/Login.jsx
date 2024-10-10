@@ -68,9 +68,22 @@ const Login = () => {
       .then((response) => {
         console.log("Login successfully:", response.data);
 
-        // Redirect to dashboard on successful login
-        navigate("/user-dashboard"); 
-      })
+        // if (response.message === "Successfully Login") {
+          console.log(response.userType);
+          window.localStorage.setItem("token", response.data);
+          window.localStorage.setItem("userType", "user");
+          window.localStorage.setItem("loggedIn", true);
+          
+          if (response.userType === "admin") {
+            return (window.location.href = "./admin-dashboard");
+          } else {
+            window.location.href = "./user-dashboard";
+          }
+        }
+
+        // navigate("/user-dashboard"); 
+      // }
+    )
       .catch((error) => {
         console.error("Error submitting form:", error);
       });

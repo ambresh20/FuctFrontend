@@ -88,19 +88,14 @@ const Footer = () => {
               </NavLink>
             </li>
             <li>
-              <a href="#features" className="hover:text-blue-400">
-                Features
-              </a>
+              <NavLink to="/login" className="hover:text-blue-400">
+                User Login
+              </NavLink>
             </li>
             <li>
-              <a href="#about-us" className="hover:text-blue-400">
+              <NavLink to="/aboutus" className="hover:text-blue-400">
                 About Us
-              </a>
-            </li>
-            <li>
-              <a href="#services" className="hover:text-blue-400">
-                Services
-              </a>
+              </NavLink>
             </li>
             <li>
               <a href="#gallery" className="hover:text-blue-400">
